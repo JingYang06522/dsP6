@@ -27,16 +27,6 @@ mlp, scaler = load_assets()
 col1, col2 = st.columns(2)
 input_values = []
 
-for idx, feature in enumerate(feature_names):
-    target_col = col1 if idx % 2 == 0 else col2
-
-    # Binary selection for ocean proximity dummy variables
-    if "ocean_proximity" in feature:
-        val = target_col.selectbox(f"{feature}", options=[0, 1], index=0)
-    else:
-        val = target_col.number_input(f"{feature}", value=0.0)
-
-    input_values.append(val)
 
 st.markdown("---")
 if st.button("🚀 Predict House Value", use_container_width=True):
