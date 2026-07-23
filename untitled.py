@@ -16,11 +16,10 @@ import streamlit as st
 def load_assets():
     mlp = joblib.load("mlp_model.joblib")
     scaler = joblib.load("scaler.joblib")
-    feature_names = joblib.load("feature_names.joblib")
-    return mlp, scaler, feature_names
+    return mlp, scaler
 
 
-mlp, scaler, feature_names = load_assets()
+mlp, scaler = load_assets()
 
 
 
